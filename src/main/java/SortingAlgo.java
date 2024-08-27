@@ -46,9 +46,28 @@ public class SortingAlgo{
         }
     }
 
+    public static void insertionSort(int[] nums){
+        for(int i = 1; i<nums.length;i++){
+            int current = nums[i];
+            int j = i - 1;
+
+            while(j >= 0 && nums[j] >= current){
+                nums[j + 1] = nums[j];
+                j--;
+            }
+            nums[j + 1] = current;
+        }
+
+        System.out.println("Final Sort result :");
+        for(int k:nums){
+            System.out.printf("%d ",k);
+        }
+    }
+
     public static void main(String[] args) {
-        int[] nums = {20,10,-1,5,7,9,-2,5};
+        int[] nums = {20,50,-1,5,7,9,-2,5};
         //SortingAlgo.bubbleSort(nums);
-        SortingAlgo.selectionSort(nums);
+        //SortingAlgo.selectionSort(nums);
+        SortingAlgo.insertionSort(nums);
     }
 }
